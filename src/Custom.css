@@ -1,0 +1,100 @@
+/* Custom Job Portal Colors */
+:root {
+  --primary-bg-color: #1c1c28; /* Main background */
+  --card-bg-color: #7875751f; /* Card background */
+  --primary-accent-color: #4a90e2; /* Primary accent for buttons, links */
+  --text-color: #d0cdcd; /* Light text color */
+  --heading-color: #f5f5f5; /* Heading color - light grey/white */
+}
+
+/* Usage Examples */
+.body_background {
+  background-color: var(--primary-bg-color);
+}
+
+.card_background {
+  background-color: var(--card-bg-color);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px rgba(8, 6, 55, 0.33);
+  backdrop-filter: blur(10.4px);
+  -webkit-backdrop-filter: blur(6.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.button_primary,
+.delete_btn {
+  position: relative;
+  overflow: hidden; /* Ensure the pseudo-element stays within the button */
+  background-color: var(--primary-accent-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: color 0.3s ease; /* Transition for text color */
+  z-index: 0;
+}
+
+.button_primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start off to the left */
+  width: 100%;
+  height: 100%;
+  background-color: #3c7abd; /* Darker shade */
+  transition: left 0.3s ease; /* Transition for the background */
+  z-index: -1; /* Send it behind the text */
+}
+
+.button_primary:hover,
+.delete_btn:hover {
+  color: white; /* Keep text color consistent on hover */
+}
+
+.button_primary:hover::before,
+.delete_btn:hover::before {
+  left: 0; /* Move to the right on hover */
+}
+
+.delete_btn {
+  position: relative;
+  overflow: hidden; /* Ensure the pseudo-element stays within the button */
+  background-color: #c20808;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: color 0.3s ease; /* Transition for text color */
+  z-index: 0;
+}
+
+.delete_btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start off to the left */
+  width: 100%;
+  height: 100%;
+  background-color: #8d0606; /* Darker shade */
+  transition: left 0.3s ease; /* Transition for the background */
+  z-index: -1; /* Send it behind the text */
+}
+
+.text_color {
+  color: var(--text-color);
+}
+
+.text_color:hover {
+  color: #9a9696;
+}
+
+.heading_color {
+  color: var(--heading-color);
+  font-weight: bold;
+}
+
+.card_styles {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+

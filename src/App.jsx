@@ -69,7 +69,9 @@ const appRouter = createBrowserRouter([
     path: '/admin/jobs/:id/applicants',
     element: <ProtectedRoute><Applicants /></ProtectedRoute>
   },
-])
+],{
+  basename: '/Job-Listing-Portal' // Add the basename here
+});
 function App() {
 
   return (
